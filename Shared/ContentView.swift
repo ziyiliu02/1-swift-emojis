@@ -24,7 +24,9 @@ struct ContentView: View {
                     Text(emoji.rawValue)
                 }
             }
+            .pickerStyle(.segmented)
         }
+        .padding()
     }
 }
 
