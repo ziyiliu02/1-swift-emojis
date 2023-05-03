@@ -7,10 +7,16 @@
 
 import SwiftUI
 
+enum Emoji: String {
+    case 🐱,🐶
+}
+
 struct ContentView: View {
+    var selection: Emoji = .🐱
+    
     var body: some View {
-        Text("First iOS App")
-            .padding()
+        Text(selection.rawValue)
+            .font(.system(size: 150))
     }
 }
 
