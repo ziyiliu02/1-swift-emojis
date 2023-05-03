@@ -15,18 +15,21 @@ struct ContentView: View {
     @State var selection: Emoji = .🐱
     
     var body: some View {
-        VStack {
-            Text(selection.rawValue)
-                .font(.system(size: 150))
-            
-            Picker("Select Emoji", selection: $selection){
-                ForEach(Emoji.allCases, id: \.self){ emoji in
-                    Text(emoji.rawValue)
+        NavigationView {
+            VStack {
+                Text(selection.rawValue)
+                    .font(.system(size: 150))
+                
+                Picker("Select Emoji", selection: $selection){
+                    ForEach(Emoji.allCases, id: \.self){ emoji in
+                        Text(emoji.rawValue)
+                    }
                 }
+                .pickerStyle(.segmented)
             }
-            .pickerStyle(.segmented)
+            .navigationTitle("Emojis Lovers!")
+            .padding()
         }
-        .padding()
     }
 }
 
